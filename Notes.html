@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #box{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">first</button>
+    <button id="btn2">second</button>
+    <div id="box">BOX</div>
+</body>
+<script>
+    const box = document.getElementById("box");
+    const btn = document.getElementById("btn2");
+    const button = document.getElementById("btn1");
+
+    button.addEventListener("click", () => {
+        console.log("clicked");
+    });
+    
+    let flag = Boolean(0);
+    btn.addEventListener("click", () => {
+        if(flag){
+            box.style.color="red";
+            flag = 0;
+        }
+        else{
+            box.style.color="green";
+            flag = 1;
+        }
+    });
+</script>
+</html>
