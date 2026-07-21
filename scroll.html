@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    height:6000px; /* Just to make the page scrollable */
+}
+#number{
+    position: fixed;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Scroll the page</h1>
+
+<h1 id="number">0</h1>
+
+<script>
+    const number = document.getElementById("number");
+
+    let lastScroll = 0;
+
+    let value = 0;
+    window.addEventListener("scroll", () => {
+
+        let currentScroll = window.scrollY;
+        if(currentScroll > lastScroll){
+            // console.log("Scrolling Down");
+            value += 1;
+            number.textContent = value;
+        }
+        else if(currentScroll < lastScroll){
+            // console.log("Scrolling Up");
+            value -= 1;
+            number.textContent = value;
+        }
+
+        lastScroll = currentScroll;
+    });
+    // browser does not wait until you've finished scrolling.
+    // the value is dependent on scroll speed, 
+    // in fast scroll, it capture less scroll, so less values
+    // but in slow scroll, it captures more scroll, so more values
+</script>
+
+</body>
+</html>

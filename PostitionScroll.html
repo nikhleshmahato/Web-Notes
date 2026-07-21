@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Scroll</title>
+    <style>
+        body{
+            height: 6000px;
+        }
+        #number{
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scroll the page</h1>
+    <h1 id="number">0</h1>
+</body>
+<script>
+    const number = document.getElementById("number");
+
+    document.addEventListener("scroll", () => {
+        number.innerText = window.scrollY;
+    });
+</script>
+</html>
